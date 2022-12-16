@@ -7,6 +7,7 @@ import java.util.List;
 import entities.enums.NivelTrabalhador;
 
 public class Trabalhador {
+	
 	private String nome;
 	private Double salarioBase;
 	private NivelTrabalhador nivel;
@@ -76,8 +77,8 @@ public class Trabalhador {
 		for(HoraContrato c : contratos) {
 			cal.setTime(c.getData());
 			int c_ano = cal.get(Calendar.YEAR);
-			int c_mes = cal.get(Calendar.MONTH);
-			if(ano == c_ano & mes == c_mes) {
+			int c_mes = 1 + cal.get(Calendar.MONTH);
+			if(ano == c_ano && mes == c_mes) {
 				soma += c.valorTotal()
 ;			}
 		}
